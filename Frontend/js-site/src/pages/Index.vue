@@ -5,14 +5,27 @@
     <section>
       <js-benefits />
     </section>
+    <section class="mt-100">
+      <js-services />
+    </section>
+    <section class="mt-100">
+      <js-portfolio/>
+    </section>
+    <section class="mt-100">
+      <js-about />
+    </section>
+
   </q-page>
 </template>
 
 <script>
 import JsHomeFirstScreen from "components/home/jsHomeFirstScreen";
 import JsBenefits from "components/home/jsBenefits";
+import JsServices from "components/home/jsServices";
+import JsAbout from "components/home/jsAbout";
+import JsPortfolio from "components/home/jsPortfolio";
 export default {
   name: 'PageIndex',
-  components: {JsBenefits, JsHomeFirstScreen}
+  components: {JsPortfolio, JsAbout, JsServices, JsBenefits, JsHomeFirstScreen}
 }
 </script>

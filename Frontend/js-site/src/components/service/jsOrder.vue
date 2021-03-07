@@ -2,10 +2,10 @@
   <div>
     <div class="px-m-20 q-mt-md no-padding-d">
       <q-btn
-        :label="label"
-        :class="color === 'positive' ? `rounded q-py-sm letter-1 q-px-md` : `rounded q-py-sm letter-1 q-px-md accent-shadow`"
+        label="Консультация"
+        class="rounded q-py-sm letter-1 q-px-md accent-shadow"
         :style="$q.platform.is.mobile ? `min-width: 100%` : ``"
-        :color="color"
+        color="accent"
         outline unelevated
         @click="dialog = true"
       />
@@ -16,7 +16,7 @@
         style="width: 500px; max-width: 100%"
       >
         <q-toolbar class="flex justify-between">
-          <q-toolbar-title class="text-bold text-accent">{{ service === 'Консультация' ? 'Консультация' : ''}}</q-toolbar-title>
+          <q-toolbar-title class="text-bold text-accent">Консультация</q-toolbar-title>
           <q-btn icon="close" color="accent" dense flat v-close-popup/>
         </q-toolbar>
         <q-card-section>
@@ -64,66 +64,8 @@
 </template>
 
 <script>
-import notifier from "src/service/notifier";
-
 export default {
-  name: "jsConsultation",
-  props: {
-    label: {
-      type: String,
-      default: 'Консультация'
-    },
-    color: {
-      type: String,
-      default: 'accent'
-    },
-    service: {
-      type: String,
-      default: 'Консультация'
-    }
-  },
-  data() {
-    return {
-      dialog: false,
-      formData: {
-        name: '',
-        phone: '',
-        text: ''
-      }
-    }
-  },
-  methods: {
-    validate(name, phone) {
-      if (name === '') {
-        notifier('Необходимо указать имя')
-        return false
-      }
-      if (phone === '') {
-        notifier('Необходимо указать номер телефона')
-        return false
-      }
-      return true
-    },
-    async sentData() {
-      let valid = this.validate(this.formData.name, this.formData.phone)
-      if (valid) {
-        this.formData.service = this.service
-
-        await this.$axios(`${this.$store.getters.getServerURL}/contacts/create_callback/`, {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          data: JSON.stringify(this.formData)
-        }).then(response => {
-          if(response.status === 201) {
-            notifier('Спасибо! Ваша заявка принята', 'accent')
-            this.dialog = false
-          } else {
-            notifier('Извините. Произошла ошибка. Попробуйте еще раз')
-          }
-        })
-      }
-    }
-  }
+  name: "jsOrder"
 }
 </script>
 

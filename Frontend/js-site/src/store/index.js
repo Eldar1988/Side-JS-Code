@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import portfolio from './modules/portfolio'
 
 // import example from './module-example'
 
@@ -17,6 +18,7 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
+      portfolio
     },
     state: {
       serverURL: 'http://192.168.0.199:8000'

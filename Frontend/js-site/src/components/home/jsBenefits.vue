@@ -8,12 +8,12 @@
     >
       <q-card
         dark
-        class="text-center benefit-card rounded bg-green-gradient flex flex-center column"
+        class="text-center benefit-card rounded flex flex-center column my-shadow"
         style="min-width: 250px"
       >
         <q-card-section>
-          <h3 class="text-h6 text-bold">{{ benefit.title }}</h3>
-          <p class="q-mt-sm">{{ benefit.text }}</p>
+          <h3 class="text-h6 text-bold text-accent">{{ benefit.title }}</h3>
+          <p class="q-mt-sm text-grey-5">{{ benefit.text }}</p>
         </q-card-section>
       </q-card>
     </div>
@@ -47,7 +47,8 @@ name: "jsBenefits",
 
 .benefit-card
   min-height: 100%
-  opacity: 1
+  //border: 1px solid $accent
+  background: rgba(0,0,0,.1)
 
 @media screen and (max-width: 992px)
   .benefits-grid
@@ -56,6 +57,7 @@ name: "jsBenefits",
     display: flex
     flex-wrap: nowrap
     grid-gap: 0
+    padding: 10px 0
 
   .benefit-card
     margin-left: 20px
