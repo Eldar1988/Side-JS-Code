@@ -3,9 +3,10 @@
     <div class="px-m-20 q-mt-md no-padding-d">
       <q-btn
         label="Консультация"
-        class="full-width rounded q-py-sm letter-1"
+        class="rounded q-py-sm letter-1 q-px-md accent-shadow"
+        :style="$q.platform.is.mobile ? `min-width: 100%` : ``"
         color="accent"
-        outline
+        outline unelevated
         @click="dialog = true"
       />
     </div>
@@ -19,7 +20,8 @@
           <q-btn icon="close" dense flat v-close-popup/>
         </q-toolbar>
         <q-card-section>
-          <p>Заполните форму обратной связи<br>Мы свяжемся с вами в течении 5 минут</p>
+          <p>Заполните форму обратной связи<br>Мы свяжемся с вами в течении 5 минут
+            <br><br>Или позвоните по номеру <a href="tel:+77781665240" class="text-positive q-ml-sm">+7 778 166 5250</a></p>
           <div class="q-mt-lg">
             <q-form>
               <q-input
@@ -39,7 +41,7 @@
                 mask="# ### ### ####"
               />
               <q-input
-                v-model="formData.phone"
+                v-model="formData.text"
                 label="Комментарий (необязательно)"
                 dark outlined
                 color="positive"
@@ -90,7 +92,18 @@ export default {
     async sentData() {
       let valid = this.validate(this.formData.name, this.formData.phone)
       if (valid) {
-        notifier('Success', 'positive')
+        await this.$axios(`${this.$store.getters.getServerURL}/contacts/create_callback/`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          data: JSON.stringify(this.formData)
+        }).then(response => {
+          if(response.status === 201) {
+            notifier('Спасибо! Ваша заявка принята', 'accent')
+            this.dialog = false
+          } else {
+            notifier('Извините. Произошла ошибка. Попробуйте еще раз')
+          }
+        })
       }
     }
   }

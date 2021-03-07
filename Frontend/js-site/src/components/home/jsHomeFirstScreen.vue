@@ -9,7 +9,7 @@
           v-for="(card, index) in cards"
           :key="index"
           dark
-          class="rounded bg-green-gradient q-py-lg q-px-md ml-m-20 shadow-3"
+          class="rounded bg-gradient-1 q-py-lg q-px-md ml-m-20 shadow-3"
           style="min-width: 220px;"
         >
           <q-icon :name="card.icon" size="lg"/>

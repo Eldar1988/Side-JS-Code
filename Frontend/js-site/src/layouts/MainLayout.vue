@@ -4,7 +4,7 @@
     <q-header elevated class="bg-dark text-grey-4">
       <q-toolbar>
         <q-toolbar-title class="text-bold text-uppercase text-positive">
-          <span class="text-accent">//</span> JS Code
+          <span class="">//</span> JS Code
         </q-toolbar-title>
 
         <q-btn dense flat round icon="view_list" size="lg" @click="right = !right" color="accent"  />

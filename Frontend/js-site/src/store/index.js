@@ -17,7 +17,12 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      // example
+    },
+    state: {
+      serverURL: 'http://192.168.0.199:8000'
+    },
+    getters: {
+      getServerURL: state => state.serverURL
     },
 
     // enable strict mode (adds overhead!)
