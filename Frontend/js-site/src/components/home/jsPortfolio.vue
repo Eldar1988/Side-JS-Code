@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h2 class="text-center text-h5 text-bold">Наше портфолио</h2>
+    <p class="text-center q-mt-md text-grey-5">Здесь только последних работ<br>для получения полного портофлио свяжитесь с нами</p>
     <div class="portfolios-grid q-mt-xl">
       <q-card
         v-for="portfolio in portfolios"
@@ -21,6 +22,7 @@
             label="Подробнее"
             color="accent"
             class="q-mt-md q-px-md rounded accent-shadow"
+            :to="`/portfolio/${portfolio.slug}`"
           />
         </q-card-section>
       </q-card>

@@ -21,7 +21,8 @@ export default function (/* { ssrContext } */) {
       portfolio
     },
     state: {
-      serverURL: 'http://192.168.0.199:8000'
+      // serverURL: 'http://192.168.0.199:8000'
+      serverURL: 'https://api.js-code.ru'
     },
     getters: {
       getServerURL: state => state.serverURL

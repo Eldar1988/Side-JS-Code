@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-center text-center column">
-    <h1 class="text-h5 q-px-md text-bold">Разработка сайтов<br> веб-сервисов и мобильных приложений<br>
+    <h1 class="text-h5 q-px-md text-bold">Разработка сайтов<br> веб-сервисов и мобильных приложений<br>в Казахстане<br>
     </h1>
     <div class="container">
       <p class="q-mt-xl q-px-md">Мы предлагаем комплексное решение:</p>

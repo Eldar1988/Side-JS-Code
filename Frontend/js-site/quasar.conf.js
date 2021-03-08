@@ -13,7 +13,7 @@ module.exports = function (/* ctx */) {
     supportTS: false,
 
     // https://quasar.dev/quasar-cli/prefetch-feature
-    // preFetch: true,
+    preFetch: true,
 
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
@@ -119,13 +119,13 @@ cfg.module.rules.push({
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `JS Site App`,
-        short_name: `JS Site App`,
+        name: `JS Code`,
+        short_name: `JS Code`,
         description: `JS Code crossplatform application`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
-        theme_color: '#027be3',
+        theme_color: '#191A26',
         icons: [
           {
             src: 'icons/icon-128x128.png',
