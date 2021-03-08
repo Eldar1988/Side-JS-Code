@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-bottom-btn">
+  <div class="mobile-bottom-btn hide-on-mobile">
     <q-fab
       v-model="fab1"
       color="accent"
