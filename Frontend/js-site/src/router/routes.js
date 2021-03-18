@@ -8,6 +8,13 @@ const routes = [
     ]
   },
   {
+    path: '/shop',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Shop.vue') }
+    ]
+  },
+  {
     path: '/portfolio/:slug',
     params: 'slug',
     component: () => import('layouts/MainLayout.vue'),

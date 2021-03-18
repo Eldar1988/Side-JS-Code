@@ -16,7 +16,7 @@
         style="width: 500px; max-width: 100%"
       >
         <q-toolbar class="flex justify-between">
-          <q-toolbar-title class="text-bold text-accent">{{ service === 'Консультация' ? 'Консультация' : ''}}</q-toolbar-title>
+          <q-toolbar-title class="text-bold text-accent">{{ service === 'Консультация' ? 'Консультация' : service}}</q-toolbar-title>
           <q-btn icon="close" color="accent" dense flat v-close-popup/>
         </q-toolbar>
         <q-card-section>
