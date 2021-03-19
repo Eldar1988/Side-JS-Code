@@ -27,12 +27,17 @@ import JsPortfolio from "components/home/jsPortfolio";
 export default {
   name: 'PageIndex',
   created() {
+    if(this.$route.query.target === 'shop') {
+      this.$router.push('/shop')
+    }
     this.$root.$on('scrollTo', (id) => {
       console.log(id)
       document.getElementById(id).scrollIntoView({
         behavior: 'smooth'
       })
     })
+  },
+  mounted() {
 
   },
   components: {JsPortfolio, JsAbout, JsServices, JsBenefits, JsHomeFirstScreen}
