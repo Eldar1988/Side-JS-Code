@@ -11,8 +11,6 @@ class ServiceCategory(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=30)
-    service = models.ForeignKey(ServiceCategory, on_delete=models.SET_NULL, null=True, blank=True,
-                                related_name='clients')
     notice = models.TextField(null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
