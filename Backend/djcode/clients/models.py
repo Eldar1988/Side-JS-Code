@@ -29,6 +29,7 @@ class Order(models.Model):
     balance = models.DecimalField(decimal_places=2, max_digits=10)
     notice = models.TextField(null=True, blank=True)
     site_url = models.CharField(max_length=255, null=True, blank=True)
+    backend_url = models.CharField(max_length=255, null=True, blank=True)
     git_url = models.CharField(null=True, blank=True, max_length=255)
     date = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
@@ -40,7 +41,7 @@ class Order(models.Model):
 class Payment(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True, related_name='payments')
     payment_sum = models.DecimalField(max_digits=10, decimal_places=2)
-    notice = models.TextField(null=True, blank=True)
+    notice = models.CharField(null=True, blank=True, max_length=255)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -63,10 +64,8 @@ class Key(models.Model):
     title = models.CharField(max_length=255)
     login = models.CharField(max_length=255, null=True, blank=True)
     password = models.CharField(max_length=255, null=True, blank=True)
-    email = models.EmailField(null=True, blank=True)
     field_1 = models.CharField(null=True, blank=True, max_length=255)
     field_2 = models.CharField(null=True, blank=True, max_length=255)
-    notice = models.TextField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
